@@ -11,6 +11,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 body::before {
     content: '';
@@ -40,13 +41,12 @@ header {
     box-shadow: 0 0 15px rgba(0,0,0,0.8);
     font-size: 22px;
     line-height: 2;
-    text-align: justify; /* выравнивание по ширине */
+    text-align: justify;
 }
 p {
-    margin-bottom: 20px; /* абзацы */
-     margin: 15px 0; /* отступ сверху и снизу */
-    line-height: 1.8; /* расстояние между строками для читаемости */
-    text-indent: 50px; 
+    margin: 15px 0;
+    line-height: 1.8;
+    text-indent: 50px;
 }
 h2 {
     text-align: center;
@@ -113,11 +113,13 @@ select {
 
 <div class="media">
     <video controls width="480">
-       <source src="./video/video.mp4" type="video/mp4">
+        <source src="./video/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
     <br><br>
     <audio controls>
         <source src="./audio/audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
     </audio>
 </div>
 
@@ -204,9 +206,9 @@ const optionsList = [
 // вставляем варианты в select
 const selects = document.querySelectorAll('.blank');
 selects.forEach((select, i) => {
-    let firstOption = optionsList[i][0]; // "___________"
+    let firstOption = optionsList[i][0]; 
     let otherOptions = optionsList[i].slice(1).sort(() => Math.random() - 0.5);
-    let opts = [firstOption, ...otherOptions]; // "___________" всегда первый
+    let opts = [firstOption, ...otherOptions]; 
 
     opts.forEach(opt => {
         let option = document.createElement('option');
@@ -231,4 +233,3 @@ document.getElementById('check-btn').addEventListener('click', () => {
 </script>
 </body>
 </html>
-
