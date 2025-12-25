@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastrointestinal tract - Main</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            /* Фон с твоим фото */
+            background: url('images/img1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Затемнение фона для читаемости текста */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        header, h2, p, .nav-buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .nav-buttons button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-buttons button:hover {
+            background-color: #ff3b2e;
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.4);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header, h2, p, .nav-buttons {
+            animation: fadeIn 1.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <header>Gastrointestinal tract</header>
+    <h2>Welcome to the Interactive Exercises!</h2>
+    <p>Explore the structure and function of the gastrointestinal tract. Click the button below to start your first exercise and test your knowledge!</p>
+
+    <div class="nav-buttons">
+        <button onclick="location.href='1.html'">Start Exercises →</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gastrointestinal tract - Sentence Scramble</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('images/img1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        background: rgba(0,0,0,0.4);
+        z-index:0;
+    }
+    header {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+        position: relative;
+        z-index:1;
+    }
+    .container {
+        position: relative;
+        z-index:1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 25px 30px;
+        font-size: 20px;
+        line-height: 1.8;
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .sentence-container {
+        margin: 20px 0;
+        padding: 15px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+    }
+    .word {
+        display: inline-block;
+        background: #ff6f61;
+        color: #fff;
+        padding: 8px 12px;
+        margin: 5px;
+        border-radius: 6px;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.2s;
+    }
+    .word:hover {
+        background: #ff3b2e;
+    }
+    .sentence-output {
+        margin-top: 15px;
+        min-height: 40px;
+        border: 2px dashed #fff;
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(255,255,255,0.05);
+    }
+    .check-btn, .reset-btn {
+        margin-top: 15px;
+        padding: 10px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #fff;
+    }
+    .check-btn { background-color: #2196f3; }
+    .check-btn:hover { background-color: #0b7dda; }
+    .reset-btn { background-color: #ff9800; margin-left: 10px; }
+    .reset-btn:hover { background-color: #e68a00; }
+    .correct { background-color: #4caf50 !important; color: #fff; }
+    .incorrect { background-color: #ffeb3b !important; color: #000; }
+    .nav-buttons { text-align: center; margin-top: 30px; }
+    .nav-buttons button {
+        background-color: #ff6f61;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    .nav-buttons button:hover { background-color: #ff3b2e; }
+</style>
+</head>
+<body>
+<header>Gastrointestinal tract</header>
+<div class="container">
+<h2>Arrange the Words to Form a Correct Sentence</h2>
+
+<div class="sentence-container" data-answer="Internal organs like the stomach and intestines help with digestion">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The stomach helps break down food into smaller parts">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The esophagus is a muscular tube that moves food to the stomach">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The pancreas produces insulin to control sugar levels">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The stomach makes gastric juice to digest food">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The small intestine absorbs nutrients from food">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="sentence-container" data-answer="The liver produces bile to help digest fats">
+    <div class="words"></div>
+    <div class="sentence-output"></div>
+    <button class="check-btn">Check</button>
+    <button class="reset-btn">Reset</button>
+</div>
+
+<div class="nav-buttons">
+    <button onclick="location.href='previous.html'">← Back</button>
+    <button onclick="location.href='next.html'">Next →</button>
+</div>
+</div>
+
+<script>
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+document.querySelectorAll('.sentence-container').forEach(container => {
+    const answer = container.dataset.answer;
+    const wordsDiv = container.querySelector('.words');
+    const outputDiv = container.querySelector('.sentence-output');
+    const checkBtn = container.querySelector('.check-btn');
+    const resetBtn = container.querySelector('.reset-btn');
+
+    // Разбиваем предложение на слова, включая артикли сразу с существительными
+    let wordList = answer.split(' ');
+    // Например, "The stomach" будет одним словом
+    // Создаем пары "The + слово", если слово начинается с заглавной буквы артикля
+    const combinedWords = [];
+    for(let i=0;i<wordList.length;i++){
+        if(wordList[i] === "The" && i+1 < wordList.length){
+            combinedWords.push(wordList[i]+" "+wordList[i+1]);
+            i++; // пропускаем следующее слово, т.к. оно уже объединено
+        } else {
+            combinedWords.push(wordList[i]);
+        }
+    }
+
+    let words = shuffleArray(combinedWords);
+
+    function renderWords() {
+        wordsDiv.innerHTML = '';
+        words.forEach(word => {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = word;
+            span.addEventListener('click', () => {
+                outputDiv.textContent += (outputDiv.textContent ? ' ' : '') + word;
+                span.style.visibility = 'hidden';
+            });
+            wordsDiv.appendChild(span);
+        });
+    }
+
+    renderWords();
+
+    checkBtn.addEventListener('click', () => {
+        if(outputDiv.textContent === answer){
+            outputDiv.classList.remove('incorrect');
+            outputDiv.classList.add('correct');
+        } else {
+            outputDiv.classList.remove('correct');
+            outputDiv.classList.add('incorrect');
+        }
+    });
+
+    resetBtn.addEventListener('click', () => {
+        outputDiv.textContent = '';
+        outputDiv.classList.remove('correct','incorrect');
+        renderWords();
+    });
+});
+</script>
+</body>
+</html>

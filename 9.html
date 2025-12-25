@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gastrointestinal tract - Fill in the Blanks</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/img1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index:0;
+}
+header {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    z-index:1;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+}
+.container {
+    position: relative;
+    z-index:1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    font-size: 22px;
+    line-height: 2;
+    text-align: justify; /* выравнивание по ширине */
+}
+p {
+    margin-bottom: 20px; /* абзацы */
+     margin: 15px 0; /* отступ сверху и снизу */
+    line-height: 1.8; /* расстояние между строками для читаемости */
+    text-indent: 50px; 
+}
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+select {
+    padding: 4px 8px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.correct {
+    background-color: #4caf50 !important;
+    color: #fff;
+}
+.incorrect {
+    background-color: #ffeb3b !important;
+    color: #000;
+}
+#check-btn {
+    background-color: #ff6f61;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+#check-btn:hover {
+    background-color: #ff3b2e;
+    transform: scale(1.05);
+}
+.nav-buttons { text-align: center; margin-top: 30px; }
+.nav-buttons button {
+    background-color: #ff6f61;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.nav-buttons button:hover { background-color: #ff3b2e; }
+.media {
+    text-align: center;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<header>Gastrointestinal tract</header>
+<div class="container">
+
+<h2>Fill in the Blanks</h2>
+
+<div class="media">
+    <video controls width="480">
+        <source src="video/video.mp4" type="video/mp4">
+    </video>
+    <br><br>
+    <audio controls>
+        <source src="audio/audio.mp3" type="audio/mp3">
+    </audio>
+</div>
+
+<p>
+Internal organs are specialized structures within the body that perform essential 
+<select class="blank"></select> for maintaining homeostasis and overall health.
+</p>
+
+<p>
+Heart: A muscular organ located in the 
+<select class="blank"></select> cavity, the heart is responsible for pumping 
+<select class="blank"></select> throughout the circulatory system. It comprises four 
+<select class="blank"></select>: the right and left atria and the right and left ventricles.
+</p>
+
+<p>
+Lungs: Situated in the thoracic cavity, the 
+<select class="blank"></select> facilitate gas exchange, oxygenating blood and expelling carbon dioxide. Each lung is divided into 
+<select class="blank"></select>—three on the right and two on the left.
+</p>
+
+<p>
+Liver: Located in the upper right quadrant of the abdomen, the 
+<select class="blank"></select> performs vital functions including detoxification, protein synthesis, and bile production, which aids in 
+<select class="blank"></select>.
+</p>
+
+<p>
+Stomach: Positioned in the upper left abdomen, the 
+<select class="blank"></select> is responsible for the mechanical and chemical breakdown of food, turning it into chyme for further digestion in the small 
+<select class="blank"></select>.
+</p>
+
+<p>
+Small Intestine: Comprising the duodenum, jejunum, and ileum, 
+<select class="blank"></select> is crucial for nutrient absorption. It is lined with villi and microvilli to increase its absorptive surface area.
+</p>
+
+<p>
+Large Intestine: This includes the cecum, colon, and rectum. Its main functions are the 
+<select class="blank"></select> of water and electrolytes, and the formation and expulsion of feces.
+</p>
+
+<p>
+<select class="blank"></select>: Located in the retroperitoneal space, the kidneys filter blood to produce urine, regulate 
+<select class="blank"></select> and electrolyte balance, and maintain acid-base homeostasis.
+</p>
+
+<div style="text-align:center;">
+    <button id="check-btn">Check Answers</button>
+</div>
+
+<div class="nav-buttons">
+    <button onclick="location.href='8.html'">← Back</button>
+    <button onclick="location.href='10.html'">Next →</button>
+</div>
+</div>
+
+<script>
+// правильные ответы
+const answers = [
+    "functions","thoracic","blood","chambers","lungs","lobes","liver","absorption",
+    "stomach","intestine","the small intestine","absorption","Kidneys","fluid"
+];
+
+// варианты для каждого пропуска
+const optionsList = [
+    ["___________","functions","absorption","fluid","digestion"],
+    ["___________","thoracic","abdominal","cranial","pelvic"],
+    ["___________","blood","air","fluid","saliva"],
+    ["___________","chambers","lobes","sections","divisions"],
+    ["___________","lungs","kidneys","liver","heart"],
+    ["___________","lobes","sections","chambers","parts"],
+    ["___________","liver","kidneys","pancreas","stomach"],
+    ["___________","absorption","digestion","excretion","storage"],
+    ["___________","stomach","liver","intestine","pancreas"],
+    ["___________","intestine","lung","kidney","pancreas"],
+    ["___________","the small intestine","large intestine","stomach","colon"],
+    ["___________","absorption","excretion","digestion","storage"],
+    ["___________","Kidneys","Liver","Pancreas","Spleen"],
+    ["___________","fluid","minerals","electrolytes","saliva"]
+];
+
+// вставляем варианты в select
+const selects = document.querySelectorAll('.blank');
+selects.forEach((select, i) => {
+    let firstOption = optionsList[i][0]; // "___________"
+    let otherOptions = optionsList[i].slice(1).sort(() => Math.random() - 0.5);
+    let opts = [firstOption, ...otherOptions]; // "___________" всегда первый
+
+    opts.forEach(opt => {
+        let option = document.createElement('option');
+        option.value = opt;
+        option.textContent = opt;
+        select.appendChild(option);
+    });
+});
+
+// проверка
+document.getElementById('check-btn').addEventListener('click', () => {
+    selects.forEach((select,i) => {
+        if(select.value === answers[i]){
+            select.classList.remove('incorrect');
+            select.classList.add('correct');
+        } else {
+            select.classList.remove('correct');
+            select.classList.add('incorrect');
+        }
+    });
+});
+</script>
+</body>
+</html>

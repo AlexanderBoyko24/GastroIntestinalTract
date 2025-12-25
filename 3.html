@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastrointestinal tract - New Terms</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/img1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        header {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .term-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .term-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .term-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .transcription {
+            font-style: italic;
+            font-size: 16px;
+            color: #ffeb3b;
+        }
+
+        .translation {
+            font-size: 16px;
+            color: #b3e5fc;
+            margin-top: 3px;
+        }
+
+        .play-btn {
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .play-btn:hover {
+            background-color: #ff3b2e;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-buttons button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #ff3b2e;
+        }
+
+        .nav-buttons .back-btn {
+            background-color: #607d8b;
+        }
+
+        .nav-buttons .back-btn:hover {
+            background-color: #455a64;
+        }
+    </style>
+</head>
+<body>
+    <header>Gastrointestinal tract</header>
+
+    <div class="container">
+        <h2>New Terms</h2>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to keep alive</span>
+                <span class="transcription">/tuː kiːp əˈlaɪv/</span>
+                <span class="translation">поддерживать жизнь</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to keep alive')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">enzyme</span>
+                <span class="transcription">/ˈɛnzaɪm/</span>
+                <span class="translation">фермент</span>
+            </div>
+            <button class="play-btn" onclick="playSound('enzyme')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to break down</span>
+                <span class="transcription">/tuː breɪk daʊn/</span>
+                <span class="translation">расщеплять</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to break down')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to swallow</span>
+                <span class="transcription">/tuː ˈswɒloʊ/</span>
+                <span class="translation">глотать</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to swallow')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">peristalsis</span>
+                <span class="transcription">/ˌpɛrɪˈstælsɪs/</span>
+                <span class="translation">перистальтика</span>
+            </div>
+            <button class="play-btn" onclick="playSound('peristalsis')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">nutrient</span>
+                <span class="transcription">/ˈnjuːtriənt/</span>
+                <span class="translation">питательное вещество</span>
+            </div>
+            <button class="play-btn" onclick="playSound('nutrient')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">villus</span>
+                <span class="transcription">/ˈvɪləs/</span>
+                <span class="translation">ворсинка</span>
+            </div>
+            <button class="play-btn" onclick="playSound('villus')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to absorb</span>
+                <span class="transcription">/tuː æbˈzɔːrb/</span>
+                <span class="translation">всасывать, поглощать</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to absorb')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to eliminate</span>
+                <span class="transcription">/tuː ɪˈlɪmɪneɪt/</span>
+                <span class="translation">выводить</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to eliminate')">🔊</button>
+        </div>
+
+        <div class="term-row">
+            <div class="term-info">
+                <span class="term-text">to store</span>
+                <span class="transcription">/tuː stɔːr/</span>
+                <span class="translation">хранить</span>
+            </div>
+            <button class="play-btn" onclick="playSound('to store')">🔊</button>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="back-btn" onclick="location.href='2.html'">← Back</button>
+            <button onclick="location.href='4.html'">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        function playSound(text){
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

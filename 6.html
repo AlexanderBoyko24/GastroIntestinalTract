@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gastrointestinal tract - True or False</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('images/img1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        background: rgba(0,0,0,0.4);
+        z-index:0;
+    }
+    header {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+        position: relative;
+        z-index:1;
+    }
+    .container {
+        position: relative;
+        z-index:1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 25px 30px;
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: justify;
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .statement {
+        margin: 15px 0;
+        padding: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    select {
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .check-btn {
+        margin-left: 10px;
+        padding: 6px 12px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: #2196f3;
+        color: #fff;
+    }
+    .check-btn:hover {
+        background-color: #0b7dda;
+    }
+    .correct {
+        background-color: #4caf50 !important;
+        color: #fff;
+    }
+    .incorrect {
+        background-color: #ffeb3b !important;
+        color: #000;
+    }
+    .nav-buttons {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .nav-buttons button {
+        background-color: #ff6f61;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    .nav-buttons button:hover {
+        background-color: #ff3b2e;
+    }
+</style>
+</head>
+<body>
+<header>Gastrointestinal tract</header>
+<div class="container">
+<h2>True or False</h2>
+
+<div class="statement">
+    <span>The pharynx connects the mouth to the stomach</span>
+    <div>
+        <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The esophagus moves food to the stomach using peristalsis</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The small intestine is responsible for most nutrient absorption</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The large intestine produces bile to help digest fats</span>
+    <div>
+        <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The pancreas produces both digestive enzymes and insulin</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The gallbladder stores and releases bile when needed</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The stomach absorbs most of the nutrients from food</span>
+    <div>
+        <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The liver removes toxins from the blood and stores vitamins</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The anus is the first part of the digestive system</span>
+    <div>
+        <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>The digestive system and endocrine system are not connected</span>
+    <div>
+        <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="nav-buttons">
+    <button onclick="location.href='5.html'">← Back</button>
+    <button onclick="location.href='7.html'">Next →</button>
+</div>
+</div>
+
+<script>
+document.querySelectorAll('.check-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+        const select = this.previousElementSibling;
+        if(select.value === select.dataset.answer){
+            select.classList.remove('incorrect');
+            select.classList.add('correct');
+        } else {
+            select.classList.remove('correct');
+            select.classList.add('incorrect');
+        }
+    });
+});
+</script>
+</body>
+</html>

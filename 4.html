@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastrointestinal tract - Translate Phrases</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/img1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+            z-index:0;
+        }
+
+        header {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            z-index:1;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            position: relative;
+            z-index:1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .phrase-row {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        select {
+            padding: 6px 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .correct {
+            background-color: #4caf50 !important;
+            color: #fff;
+        }
+
+        .incorrect {
+            background-color: #ffeb3b !important;
+            color: #000;
+        }
+
+        .play-btn, .check-btn {
+            margin-left: 10px;
+            border: none;
+            border-radius: 6px;
+            padding: 5px 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .play-btn {
+            background-color: #ff6f61;
+        }
+
+        .check-btn {
+            background-color: #2196f3;
+        }
+
+        .play-btn:hover {
+            background-color: #ff3b2e;
+        }
+
+        .check-btn:hover {
+            background-color: #0b7dda;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .nav-buttons button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #ff3b2e;
+        }
+
+        .nav-buttons .back-btn {
+            background-color: #607d8b;
+        }
+
+        .nav-buttons .back-btn:hover {
+            background-color: #455a64;
+        }
+    </style>
+</head>
+<body>
+<header>Gastrointestinal tract</header>
+
+<div class="container">
+    <h2>Translate the Phrases</h2>
+
+    <div class="phrase-row">
+        <span>Поддерживать нас живыми и здоровыми:</span>
+        <div>
+            <select data-answer="to keep us alive and healthy">
+                <option value="">Select</option>
+                <option>saliva contains enzymes</option>
+                <option>to keep us alive and healthy</option>
+                <option>to swallow food</option>
+                <option>a process called peristalsis</option>
+            </select>
+            <button class="play-btn" onclick="playSound('to keep us alive and healthy')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Слюна содержит ферменты:</span>
+        <div>
+            <select data-answer="saliva contains enzymes">
+                <option value="">Select</option>
+                <option>saliva contains enzymes</option>
+                <option>to be eliminated through the anus</option>
+                <option>to break down proteins</option>
+                <option>help absorb nutrients</option>
+            </select>
+            <button class="play-btn" onclick="playSound('saliva contains enzymes')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Для расщепления белков:</span>
+        <div>
+            <select data-answer="to break down proteins">
+                <option value="">Select</option>
+                <option>to break down proteins</option>
+                <option>to absorb nutrients</option>
+                <option>to swallow food</option>
+                <option>the gallbladder stores bile</option>
+            </select>
+            <button class="play-btn" onclick="playSound('to break down proteins')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Глотать пищу:</span>
+        <div>
+            <select data-answer="to swallow food">
+                <option value="">Select</option>
+                <option>to swallow food</option>
+                <option>a process called peristalsis</option>
+                <option>to keep us alive and healthy</option>
+                <option>to be eliminated through the anus</option>
+            </select>
+            <button class="play-btn" onclick="playSound('to swallow food')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Процесс, называемый перистальтикой:</span>
+        <div>
+            <select data-answer="a process called peristalsis">
+                <option value="">Select</option>
+                <option>a process called peristalsis</option>
+                <option>to break down proteins</option>
+                <option>saliva contains enzymes</option>
+                <option>to keep us alive and healthy</option>
+            </select>
+            <button class="play-btn" onclick="playSound('a process called peristalsis')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Помогает всасывать питательные вещества:</span>
+        <div>
+            <select data-answer="help absorb nutrients">
+                <option value="">Select</option>
+                <option>help absorb nutrients</option>
+                <option>the gallbladder stores bile</option>
+                <option>tiny structures called villi</option>
+                <option>to break down proteins</option>
+            </select>
+            <button class="play-btn" onclick="playSound('help absorb nutrients')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Крошечные структуры, называемые ворсинки:</span>
+        <div>
+            <select data-answer="tiny structures called villi">
+                <option value="">Select</option>
+                <option>tiny structures called villi</option>
+                <option>saliva contains enzymes</option>
+                <option>to keep alive</option>
+                <option>to keep us alive and healthy</option>
+            </select>
+            <button class="play-btn" onclick="playSound('tiny structures called villi')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Выводиться через задний проход:</span>
+        <div>
+            <select data-answer="to be eliminated through the anus">
+                <option value="">Select</option>
+                <option>to be eliminated through the anus</option>
+                <option>to absorb nutrients</option>
+                <option>to swallow food</option>
+                <option>the gallbladder stores bile</option>
+            </select>
+            <button class="play-btn" onclick="playSound('to be eliminated through the anus')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="phrase-row">
+        <span>Желчный пузырь хранит желчь:</span>
+        <div>
+            <select data-answer="the gallbladder stores bile">
+                <option value="">Select</option>
+                <option>the gallbladder stores bile</option>
+                <option>to break down proteins</option>
+                <option>to absorb nutrients</option>
+                <option>a process called peristalsis</option>
+            </select>
+            <button class="play-btn" onclick="playSound('the gallbladder stores bile')">🔊</button>
+            <button class="check-btn" onclick="checkAnswer(this)">Check</button>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="back-btn" onclick="location.href='3.html'">← Back</button>
+        <button onclick="location.href='5.html'">Next →</button>
+    </div>
+</div>
+
+<script>
+    // Функция озвучивания
+    function playSound(text){
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        speechSynthesis.speak(utterance);
+    }
+
+    // Проверка отдельного ответа
+    function checkAnswer(btn){
+        const row = btn.closest('.phrase-row');
+        const select = row.querySelector('select');
+        if(select.value === select.dataset.answer){
+            select.classList.remove('incorrect');
+            select.classList.add('correct');
+        } else {
+            select.classList.remove('correct');
+            select.classList.add('incorrect');
+        }
+    }
+
+    // Перемешивание вариантов внутри select
+    document.addEventListener('DOMContentLoaded', () => {
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            let options = Array.from(select.querySelectorAll('option'));
+            const firstOption = options.shift(); // оставляем "Select" первым
+            for (let i = options.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [options[i], options[j]] = [options[j], options[i]];
+            }
+            select.innerHTML = '';
+            select.appendChild(firstOption);
+            options.forEach(opt => select.appendChild(opt));
+        });
+    });
+</script>
+</body>
+</html>

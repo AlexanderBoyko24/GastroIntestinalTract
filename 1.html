@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastrointestinal tract - Exercise 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/img1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        header {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .terms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .term {
+            background-color: #ff6f61;
+            padding: 5px 10px;
+            margin: 0; 
+            border-radius: 8px;
+            cursor: grab;
+            user-select: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .term:active {
+            transform: scale(1.1);
+        }
+
+        .term.incorrect {
+            background-color: yellow;
+            color: #000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dropzone {
+            width: 45%;
+            min-height: 200px;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed #fff;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .dropzone h3 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-buttons button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #ff3b2e;
+        }
+
+        .nav-buttons.secondary {
+            margin-top: 10px; 
+        }
+
+        /* Popup стили */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .popup-content {
+            background: #fff;
+            color: #333;
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: popupFade 0.5s ease;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup-content button.fail {
+            background-color: #f44336;
+        }
+
+        @keyframes popupFade {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>Gastrointestinal tract</header>
+
+    <div class="terms" id="terms">
+        <div class="term" draggable="true">ileum</div>
+        <div class="term" draggable="true">heart</div>
+        <div class="term" draggable="true">vessel</div>
+        <div class="term" draggable="true">anus</div>
+        <div class="term" draggable="true">jejunum</div>
+        <div class="term" draggable="true">artery</div>
+        <div class="term" draggable="true">duodenum</div>
+        <div class="term" draggable="true">tongue</div>
+        <div class="term" draggable="true">vein</div>
+        <div class="term" draggable="true">pharynx</div>
+        <div class="term" draggable="true">stomach</div>
+        <div class="term" draggable="true">capillary</div>
+        <div class="term" draggable="true">esophagus</div>
+        <div class="term" draggable="true">intestine</div>
+        <div class="term" draggable="true">aorta</div>
+        <div class="term" draggable="true">rectum</div>
+        <div class="term" draggable="true">oral cavity</div>
+        <div class="term" draggable="true">salivary glands</div>
+        <div class="term" draggable="true">mouth</div>
+        <div class="term" draggable="true">caecum</div>
+        <div class="term" draggable="true">colon</div>
+        <div class="term" draggable="true">teeth</div>
+    </div>
+
+    <div class="container">
+        <div class="dropzone" id="vascular">
+            <h3>Parts of the vascular system</h3>
+        </div>
+        <div class="dropzone" id="alimentary">
+            <h3>Parts of the alimentary tract</h3>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="checkAnswers()">Submit →</button>
+    </div>
+
+    <div class="nav-buttons secondary">
+        <button onclick="location.href='index.html'">← Back</button>
+        <button onclick="location.href='2.html'">Next →</button>
+    </div>
+
+    <!-- Popup для успеха -->
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <h2>Congratulations!</h2>
+            <p>You sorted all terms correctly!</p>
+            <button onclick="closePopup('successPopup')">Continue →</button>
+        </div>
+    </div>
+
+    <!-- Popup для ошибки -->
+    <div class="popup" id="failPopup">
+        <div class="popup-content">
+            <h2>Oops!</h2>
+            <p>Some terms are incorrect. Check the highlighted terms.</p>
+            <button class="fail" onclick="closePopup('failPopup')">Retry</button>
+        </div>
+    </div>
+
+    <script>
+        const terms = document.querySelectorAll('.term');
+        const vascular = document.getElementById('vascular');
+        const alimentary = document.getElementById('alimentary');
+
+        let draggedTerm = null;
+
+        terms.forEach(term => {
+            term.addEventListener('dragstart', (e) => {
+                draggedTerm = term;
+            });
+        });
+
+        [vascular, alimentary].forEach(zone => {
+            zone.addEventListener('dragover', (e) => e.preventDefault());
+            zone.addEventListener('drop', (e) => {
+                zone.appendChild(draggedTerm);
+                draggedTerm = null;
+            });
+        });
+
+        function checkAnswers() {
+            const vascularTerms = ['heart','vessel','artery','vein','capillary','aorta'];
+            const alimentaryTerms = ['ileum','anus','jejunum','duodenum','tongue','pharynx','stomach','esophagus','intestine','rectum','oral cavity','salivary glands','mouth','caecum','colon','teeth'];
+
+            let correct = 0;
+
+            // Снимаем старые подсветки
+            terms.forEach(term => term.classList.remove('incorrect'));
+
+            // Проверка vascular
+            vascularTerms.forEach(term => {
+                if (Array.from(vascular.children).some(el => el.textContent === term)) correct++;
+            });
+            // Подсветка неправильных в vascular
+            Array.from(vascular.children).forEach(el => {
+                if (!vascularTerms.includes(el.textContent)) {
+                    el.classList.add('incorrect');
+                }
+            });
+
+            // Проверка alimentary
+            alimentaryTerms.forEach(term => {
+                if (Array.from(alimentary.children).some(el => el.textContent === term)) correct++;
+            });
+            // Подсветка неправильных в alimentary
+            Array.from(alimentary.children).forEach(el => {
+                if (!alimentaryTerms.includes(el.textContent)) {
+                    el.classList.add('incorrect');
+                }
+            });
+
+            const total = vascularTerms.length + alimentaryTerms.length;
+
+            if(correct === total){
+                showPopup('successPopup');
+            } else {
+                showPopup('failPopup');
+            }
+        }
+
+        function showPopup(id){
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closePopup(id){
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

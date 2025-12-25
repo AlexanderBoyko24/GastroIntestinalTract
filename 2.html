@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastrointestinal tract - Matching Exercise</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+             background: url('images/img1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        header {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .descriptions {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .description-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed #fff;
+            border-radius: 10px;
+            padding: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            position: relative;
+        }
+
+        .description-box.highlight {
+            border-color: #4caf50;
+        }
+
+        .description-text {
+            margin: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .terms {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .term {
+            background-color: #ff6f61;
+            padding: 5px 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            cursor: grab;
+            user-select: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .term:active {
+            transform: scale(1.1);
+        }
+
+        .term.incorrect {
+            background-color: yellow;
+            color: #000;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-buttons button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #ff3b2e;
+        }
+
+        .nav-buttons.secondary {
+            margin-top: 10px; 
+        }
+
+        /* Popup стили */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .popup-content {
+            background: #fff;
+            color: #333;
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            animation: popupFade 0.5s ease;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup-content button.fail {
+            background-color: #f44336;
+        }
+
+        @keyframes popupFade {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>Gastrointestinal tract</header>
+
+    <div class="container">
+        <div class="descriptions" id="descriptions">
+            <div class="description-box" data-answer="Mouth">
+                <p class="description-text">The initial part of the GI tract where food is mechanically broken down by teeth and mixed with saliva for easier swallowing.</p>
+            </div>
+            <div class="description-box" data-answer="Pharynx">
+                <p class="description-text">A muscular tube that transports food from the pharynx to the stomach using peristalsis.</p>
+            </div>
+            <div class="description-box" data-answer="Esophagus">
+                <p class="description-text">A passage that connects the mouth to the esophagus; aids in swallowing by directing food into the esophagus.</p>
+            </div>
+            <div class="description-box" data-answer="Stomach">
+                <p class="description-text">The primary site for digestion and absorption of nutrients.</p>
+            </div>
+            <div class="description-box" data-answer="Small Intestine">
+                <p class="description-text">Produces enzymes and absorbs nutrients; responsible for most chemical digestion.</p>
+            </div>
+            <div class="description-box" data-answer="Large Intestine">
+                <p class="description-text">Responsible for absorbing water and forming stool.</p>
+            </div>
+            <div class="description-box" data-answer="Anus">
+                <p class="description-text">The final part of the GI tract through which waste is expelled from the body.</p>
+            </div>
+            <div class="description-box" data-answer="Liver">
+                <p class="description-text">Produces bile, which aids in fat digestion, and performs detoxification functions.</p>
+            </div>
+            <div class="description-box" data-answer="Gallbladder">
+                <p class="description-text">Stores and releases bile into the duodenum as needed.</p>
+            </div>
+            <div class="description-box" data-answer="Pancreas">
+                <p class="description-text">Produces enzymes to break down proteins, fats, and carbohydrates and regulates blood sugar levels through insulin.</p>
+            </div>
+        </div>
+
+        <div class="terms" id="terms">
+            <div class="term" draggable="true">Mouth</div>
+            <div class="term" draggable="true">Pharynx</div>
+            <div class="term" draggable="true">Esophagus</div>
+            <div class="term" draggable="true">Stomach</div>
+            <div class="term" draggable="true">Small Intestine</div>
+            <div class="term" draggable="true">Large Intestine</div>
+            <div class="term" draggable="true">Anus</div>
+            <div class="term" draggable="true">Liver</div>
+            <div class="term" draggable="true">Gallbladder</div>
+            <div class="term" draggable="true">Pancreas</div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="checkAnswers()">Submit →</button>
+    </div>
+
+    <div class="nav-buttons secondary">
+        <button onclick="location.href='index.html'">← Back</button>
+        <button onclick="location.href='3.html'">Next →</button>
+    </div>
+
+    <div class="popup" id="successPopup">
+        <div class="popup-content">
+            <h2>Congratulations!</h2>
+            <p>You matched all organs correctly!</p>
+            <button onclick="closePopup('successPopup')">Continue →</button>
+        </div>
+    </div>
+
+    <div class="popup" id="failPopup">
+        <div class="popup-content">
+            <h2>Oops!</h2>
+            <p>Some matches are incorrect. Check the highlighted terms.</p>
+            <button class="fail" onclick="closePopup('failPopup')">Retry</button>
+        </div>
+    </div>
+
+    <script>
+        const terms = document.querySelectorAll('.term');
+        const boxes = document.querySelectorAll('.description-box');
+        let draggedTerm = null;
+
+        terms.forEach(term => {
+            term.addEventListener('dragstart', () => draggedTerm = term);
+        });
+
+        boxes.forEach(box => {
+            box.addEventListener('dragover', e => e.preventDefault());
+            box.addEventListener('drop', () => {
+                if(draggedTerm){
+                    box.appendChild(draggedTerm);
+                    draggedTerm = null;
+                }
+            });
+        });
+
+        function checkAnswers() {
+            let correct = 0;
+            terms.forEach(term => term.classList.remove('incorrect'));
+
+            boxes.forEach(box => {
+                const termInside = box.querySelector('.term');
+                if(termInside){
+                    if(termInside.textContent === box.dataset.answer){
+                        correct++;
+                    } else {
+                        termInside.classList.add('incorrect');
+                    }
+                }
+            });
+
+            if(correct === boxes.length){
+                showPopup('successPopup');
+            } else {
+                showPopup('failPopup');
+            }
+        }
+
+        function showPopup(id){
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closePopup(id){
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
