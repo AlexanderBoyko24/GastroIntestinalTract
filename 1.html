@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gastrointestinal tract - Exercise 1</title>
+    <title>Gastrointestinal & Nervous Systems - Exercise 1</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -15,6 +15,7 @@
             color: #fff;
         }
 
+        /* Затемняющий слой */
         body::before {
             content: '';
             position: absolute;
@@ -25,7 +26,7 @@
         }
 
         header {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
             text-align: center;
             margin: 20px 0;
@@ -46,7 +47,7 @@
         .term {
             background-color: #ff6f61;
             padding: 5px 10px;
-            margin: 0; 
+            margin: 5px; 
             border-radius: 8px;
             cursor: grab;
             user-select: none;
@@ -67,14 +68,15 @@
         .container {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             margin: 20px;
             position: relative;
             z-index: 1;
         }
 
         .dropzone {
-            width: 45%;
-            min-height: 200px;
+            width: 30%;
+            min-height: 220px;
             background: rgba(255,255,255,0.1);
             border: 2px dashed #fff;
             border-radius: 10px;
@@ -83,6 +85,7 @@
             flex-wrap: wrap;
             justify-content: flex-start;
             gap: 8px;
+            margin-bottom: 20px;
         }
 
         .dropzone h3 {
@@ -119,7 +122,6 @@
             margin-top: 10px; 
         }
 
-        /* Popup стили */
         .popup {
             display: none;
             position: fixed;
@@ -164,140 +166,212 @@
             0% { transform: scale(0.5); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
+
+        @media(max-width: 1100px) {
+            .dropzone { width: 45%; }
+        }
+
+        @media(max-width: 700px) {
+            .dropzone { width: 90%; }
+        }
+
+        /* ===== Исправленный блок инструкций ===== */
+        .highlighted-instructions {
+            text-align: center;
+            margin: 20px auto;
+            padding: 15px 20px;
+            display: inline-block;
+            position: relative; /* важно для z-index */
+            z-index: 2;         /* выше, чем body::before */
+            background: rgba(0,0,0,0.4); /* легкий фон для читаемости */
+            border-radius: 10px;
+        }
+
+        .highlighted-instructions p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffdd57; /* яркий жёлтый цвет */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* тень для читаемости */
+            margin: 8px 0;
+        }
+
+        .highlighted-instructions .key {
+            color: #ff6f61; /* контрастный цвет для ключевых слов "Term" и "System" */
+            font-weight: bolder;
+        }
+
     </style>
 </head>
 <body>
-    <header>Gastrointestinal tract</header>
+  <header>Arrange the anatomical terms into the appropriate systems</header>
 
-    <div class="terms" id="terms">
-        <div class="term" draggable="true">ileum</div>
-        <div class="term" draggable="true">heart</div>
-        <div class="term" draggable="true">vessel</div>
-        <div class="term" draggable="true">anus</div>
-        <div class="term" draggable="true">jejunum</div>
-        <div class="term" draggable="true">artery</div>
-        <div class="term" draggable="true">duodenum</div>
-        <div class="term" draggable="true">tongue</div>
-        <div class="term" draggable="true">vein</div>
-        <div class="term" draggable="true">pharynx</div>
-        <div class="term" draggable="true">stomach</div>
-        <div class="term" draggable="true">capillary</div>
-        <div class="term" draggable="true">esophagus</div>
-        <div class="term" draggable="true">intestine</div>
-        <div class="term" draggable="true">aorta</div>
-        <div class="term" draggable="true">rectum</div>
-        <div class="term" draggable="true">oral cavity</div>
-        <div class="term" draggable="true">salivary glands</div>
-        <div class="term" draggable="true">mouth</div>
-        <div class="term" draggable="true">caecum</div>
-        <div class="term" draggable="true">colon</div>
-        <div class="term" draggable="true">teeth</div>
-    </div>
+  <div class="highlighted-instructions">
+      <p><span class="key">"The Term"</span> goes to the <span class="key">"System"</span></p>
+      <p><span class="key">"The Term"</span> belongs to the <span class="key">"System"</span></p>
+      <p><span class="key">"The Term"</span> is part of the <span class="key">"System"</span></p>
+  </div>
 
-    <div class="container">
-        <div class="dropzone" id="vascular">
-            <h3>Parts of the vascular system</h3>
-        </div>
-        <div class="dropzone" id="alimentary">
-            <h3>Parts of the alimentary tract</h3>
-        </div>
-    </div>
+  <div class="terms" id="terms">
+      <!-- Alimentary terms -->
+      <div class="term" draggable="true">ileum</div>
+      <div class="term" draggable="true">anus</div>
+      <div class="term" draggable="true">jejunum</div>
+      <div class="term" draggable="true">duodenum</div>
+      <div class="term" draggable="true">tongue</div>
+      <div class="term" draggable="true">pharynx</div>
+      <div class="term" draggable="true">stomach</div>
+      <div class="term" draggable="true">esophagus</div>
+      <div class="term" draggable="true">intestine</div>
+      <div class="term" draggable="true">rectum</div>
+      <div class="term" draggable="true">oral cavity</div>
+      <div class="term" draggable="true">salivary glands</div>
+      <div class="term" draggable="true">mouth</div>
+      <div class="term" draggable="true">caecum</div>
+      <div class="term" draggable="true">colon</div>
+      <div class="term" draggable="true">teeth</div>
 
-    <div class="nav-buttons">
-        <button onclick="checkAnswers()">Submit →</button>
-    </div>
+      <!-- Vascular terms -->
+      <div class="term" draggable="true">heart</div>
+      <div class="term" draggable="true">vessel</div>
+      <div class="term" draggable="true">artery</div>
+      <div class="term" draggable="true">vein</div>
+      <div class="term" draggable="true">capillary</div>
+      <div class="term" draggable="true">aorta</div>
 
-    <div class="nav-buttons secondary">
-        <button onclick="location.href='index.html'">← Back</button>
-        <button onclick="location.href='2.html'">Next →</button>
-    </div>
+      <!-- Nervous system terms -->
+      <div class="term" draggable="true">cerebrum</div>
+      <div class="term" draggable="true">brain</div>
+      <div class="term" draggable="true">cerebral cortex</div>
+      <div class="term" draggable="true">cerebellum</div>
+      <div class="term" draggable="true">brainstem</div>
+      <div class="term" draggable="true">midbrain</div>
+      <div class="term" draggable="true">pons</div>
+      <div class="term" draggable="true">medulla oblongata</div>
+      <div class="term" draggable="true">diencephalon</div>
+      <div class="term" draggable="true">spinal cord</div>
+  </div>
 
-    <!-- Popup для успеха -->
-    <div class="popup" id="successPopup">
-        <div class="popup-content">
-            <h2>Congratulations!</h2>
-            <p>You sorted all terms correctly!</p>
-            <button onclick="closePopup('successPopup')">Continue →</button>
-        </div>
-    </div>
+  <div class="container">
+      <div class="dropzone" id="vascular">
+          <h3>Parts of the vascular system</h3>
+      </div>
+      <div class="dropzone" id="alimentary">
+          <h3>Parts of the alimentary tract</h3>
+      </div>
+      <div class="dropzone" id="nervous">
+          <h3>Parts of the nervous system</h3>
+      </div>
+  </div>
 
-    <!-- Popup для ошибки -->
-    <div class="popup" id="failPopup">
-        <div class="popup-content">
-            <h2>Oops!</h2>
-            <p>Some terms are incorrect. Check the highlighted terms.</p>
-            <button class="fail" onclick="closePopup('failPopup')">Retry</button>
-        </div>
-    </div>
+  <div class="nav-buttons">
+      <button onclick="checkAnswers()">Submit</button>
+  </div>
 
-    <script>
-        const terms = document.querySelectorAll('.term');
-        const vascular = document.getElementById('vascular');
-        const alimentary = document.getElementById('alimentary');
+  <div class="nav-buttons secondary">
+      <button onclick="location.href='index.html'">← Back</button>
+      <button onclick="location.href='2.html'">Next →</button>
+  </div>
 
-        let draggedTerm = null;
+  <div class="popup" id="successPopup">
+      <div class="popup-content">
+          <h2>Congratulations!</h2>
+          <p>You sorted all terms correctly!</p>
+          <button onclick="closePopup('successPopup')">Continue</button>
+      </div>
+  </div>
 
-        terms.forEach(term => {
-            term.addEventListener('dragstart', (e) => {
-                draggedTerm = term;
-            });
-        });
+  <div class="popup" id="failPopup">
+      <div class="popup-content">
+          <h2>Oops!</h2>
+          <p>Some terms are incorrect. Check the highlighted terms.</p>
+          <button class="fail" onclick="closePopup('failPopup')">Retry</button>
+      </div>
+  </div>
 
-        [vascular, alimentary].forEach(zone => {
-            zone.addEventListener('dragover', (e) => e.preventDefault());
-            zone.addEventListener('drop', (e) => {
-                zone.appendChild(draggedTerm);
-                draggedTerm = null;
-            });
-        });
+  <script>
+      const termsContainer = document.getElementById('terms');
+      const terms = Array.from(document.querySelectorAll('.term'));
+      const vascular = document.getElementById('vascular');
+      const alimentary = document.getElementById('alimentary');
+      const nervous = document.getElementById('nervous');
 
-        function checkAnswers() {
-            const vascularTerms = ['heart','vessel','artery','vein','capillary','aorta'];
-            const alimentaryTerms = ['ileum','anus','jejunum','duodenum','tongue','pharynx','stomach','esophagus','intestine','rectum','oral cavity','salivary glands','mouth','caecum','colon','teeth'];
+      function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array;
+      }
 
-            let correct = 0;
+      function shuffleTerms() {
+          const shuffled = shuffleArray(terms);
+          shuffled.forEach(term => termsContainer.appendChild(term));
+      }
 
-            // Снимаем старые подсветки
-            terms.forEach(term => term.classList.remove('incorrect'));
+      shuffleTerms();
 
-            // Проверка vascular
-            vascularTerms.forEach(term => {
-                if (Array.from(vascular.children).some(el => el.textContent === term)) correct++;
-            });
-            // Подсветка неправильных в vascular
-            Array.from(vascular.children).forEach(el => {
-                if (!vascularTerms.includes(el.textContent)) {
-                    el.classList.add('incorrect');
-                }
-            });
+      let draggedTerm = null;
 
-            // Проверка alimentary
-            alimentaryTerms.forEach(term => {
-                if (Array.from(alimentary.children).some(el => el.textContent === term)) correct++;
-            });
-            // Подсветка неправильных в alimentary
-            Array.from(alimentary.children).forEach(el => {
-                if (!alimentaryTerms.includes(el.textContent)) {
-                    el.classList.add('incorrect');
-                }
-            });
+      terms.forEach(term => {
+          term.addEventListener('dragstart', (e) => {
+              draggedTerm = term;
+          });
+      });
 
-            const total = vascularTerms.length + alimentaryTerms.length;
+      [vascular, alimentary, nervous].forEach(zone => {
+          zone.addEventListener('dragover', (e) => e.preventDefault());
+          zone.addEventListener('drop', (e) => {
+              zone.appendChild(draggedTerm);
+              draggedTerm = null;
+          });
+      });
 
-            if(correct === total){
-                showPopup('successPopup');
-            } else {
-                showPopup('failPopup');
-            }
-        }
+      function checkAnswers() {
+          const vascularTerms = ['heart','vessel','artery','vein','capillary','aorta'];
+          const alimentaryTerms = ['ileum','anus','jejunum','duodenum','tongue','pharynx','stomach','esophagus','intestine','rectum','oral cavity','salivary glands','mouth','caecum','colon','teeth'];
+          const nervousTerms = ['cerebrum','brain','cerebral cortex','cerebellum','brainstem','midbrain','pons','medulla oblongata','diencephalon','spinal cord'];
 
-        function showPopup(id){
-            document.getElementById(id).style.display = 'flex';
-        }
+          let correct = 0;
 
-        function closePopup(id){
-            document.getElementById(id).style.display = 'none';
-        }
-    </script>
+          terms.forEach(term => term.classList.remove('incorrect'));
+
+          vascularTerms.forEach(term => {
+              if (Array.from(vascular.children).some(el => el.textContent === term)) correct++;
+          });
+          Array.from(vascular.children).forEach(el => {
+              if (!vascularTerms.includes(el.textContent)) el.classList.add('incorrect');
+          });
+
+          alimentaryTerms.forEach(term => {
+              if (Array.from(alimentary.children).some(el => el.textContent === term)) correct++;
+          });
+          Array.from(alimentary.children).forEach(el => {
+              if (!alimentaryTerms.includes(el.textContent)) el.classList.add('incorrect');
+          });
+
+          nervousTerms.forEach(term => {
+              if (Array.from(nervous.children).some(el => el.textContent === term)) correct++;
+          });
+          Array.from(nervous.children).forEach(el => {
+              if (!nervousTerms.includes(el.textContent)) el.classList.add('incorrect');
+          });
+
+          const total = vascularTerms.length + alimentaryTerms.length + nervousTerms.length;
+
+          if(correct === total){
+              showPopup('successPopup');
+          } else {
+              showPopup('failPopup');
+          }
+      }
+
+      function showPopup(id){
+          document.getElementById(id).style.display = 'flex';
+      }
+
+      function closePopup(id){
+          document.getElementById(id).style.display = 'none';
+      }
+  </script>
 </body>
 </html>
