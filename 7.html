@@ -182,19 +182,23 @@ document.querySelectorAll('.sentence-container').forEach(container => {
     const checkBtn = container.querySelector('.check-btn');
     const resetBtn = container.querySelector('.reset-btn');
 
+
     // Разбиваем предложение на слова, включая артикли сразу с существительными
     let wordList = answer.split(' ');
     // Например, "The stomach" будет одним словом
     // Создаем пары "The + слово", если слово начинается с заглавной буквы артикля
-    const combinedWords = [];
-    for(let i=0;i<wordList.length;i++){
-        if(wordList[i] === "The" && i+1 < wordList.length){
-            combinedWords.push(wordList[i]+" "+wordList[i+1]);
-            i++; // пропускаем следующее слово, т.к. оно уже объединено
-        } else {
-            combinedWords.push(wordList[i]);
-        }
+    const articles = ["a", "an", "the", "A", "An", "The"];
+const combinedWords = [];
+
+for (let i = 0; i < wordList.length; i++) {
+    if (articles.includes(wordList[i]) && i + 1 < wordList.length) {
+        // Объединяем артикль с следующим словом
+        combinedWords.push(wordList[i] + " " + wordList[i + 1]);
+        i++; // пропускаем следующее слово, т.к. оно уже объединено
+    } else {
+        combinedWords.push(wordList[i]);
     }
+}
 
     let words = shuffleArray(combinedWords);
 
