@@ -51,19 +51,23 @@
             gap: 15px;
         }
 
-        .description-box {
-            background: rgba(255,255,255,0.1);
-            border: 2px dashed #fff;
-            border-radius: 10px;
-            padding: 15px;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s;
-            position: relative;
-        }
+      .description-box {
+    background: rgba(0,0,0,0.5);
+    border: 2px dashed #fff;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
 
         .description-box.highlight {
             border-color: #4caf50;
@@ -71,7 +75,7 @@
 
         .description-text {
             margin: 0;
-            color: #fff;
+            color: yellow;
             font-weight: bold;
         }
 
@@ -121,6 +125,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin: 5px;
+
         }
 
         .nav-buttons button:hover {
@@ -179,58 +184,60 @@
     </style>
 </head>
 <body>
-    <header>Gastrointestinal tract</header>
+    <header>Match the function with the organ</header>
 
     <div class="container">
         <div class="descriptions" id="descriptions">
             <div class="description-box" data-answer="Mouth">
-                <p class="description-text">The initial part of the GI tract where food is mechanically broken down by teeth and mixed with saliva for easier swallowing.</p>
-            </div>
-            <div class="description-box" data-answer="Pharynx">
-                <p class="description-text">A muscular tube that transports food from the pharynx to the stomach using peristalsis.</p>
+                <p class="description-text">The initial part of the Digestive tract</p>
             </div>
             <div class="description-box" data-answer="Esophagus">
-                <p class="description-text">A passage that connects the mouth to the esophagus; aids in swallowing by directing food into the esophagus.</p>
+                <p class="description-text">A muscular tube that transports food from the pharynx to the stomach</p>
+            </div>
+            <div class="description-box" data-answer="Pharynx">
+                <p class="description-text">A passage that connects the mouth to the esophagus</p>
             </div>
             <div class="description-box" data-answer="Stomach">
                 <p class="description-text">The primary site for digestion and absorption of nutrients.</p>
             </div>
             <div class="description-box" data-answer="Small Intestine">
-                <p class="description-text">Produces enzymes and absorbs nutrients; responsible for most chemical digestion.</p>
+                <p class="description-text">Responsible for most chemical digestion.</p>
             </div>
             <div class="description-box" data-answer="Large Intestine">
                 <p class="description-text">Responsible for absorbing water and forming stool.</p>
             </div>
             <div class="description-box" data-answer="Anus">
-                <p class="description-text">The final part of the GI tract through which waste is expelled from the body.</p>
+                <p class="description-text">The final part of the Digestive tract </p>
             </div>
             <div class="description-box" data-answer="Liver">
-                <p class="description-text">Produces bile, which aids in fat digestion, and performs detoxification functions.</p>
+                <p class="description-text">Produces bile and performs detoxification functions.</p>
             </div>
             <div class="description-box" data-answer="Gallbladder">
-                <p class="description-text">Stores and releases bile into the duodenum as needed.</p>
+                <p class="description-text">Stores and releases bile into the duodenum.</p>
             </div>
-            <div class="description-box" data-answer="Pancreas">
+             <div class="description-box" data-answer="Pancreas">
                 <p class="description-text">Produces enzymes to break down proteins, fats, and carbohydrates and regulates blood sugar levels through insulin.</p>
             </div>
+           
         </div>
 
         <div class="terms" id="terms">
-            <div class="term" draggable="true">Mouth</div>
-            <div class="term" draggable="true">Pharynx</div>
+            
+             <div class="term" draggable="true">Stomach</div>
             <div class="term" draggable="true">Esophagus</div>
-            <div class="term" draggable="true">Stomach</div>
+           <div class="term" draggable="true">Mouth</div>
             <div class="term" draggable="true">Small Intestine</div>
-            <div class="term" draggable="true">Large Intestine</div>
-            <div class="term" draggable="true">Anus</div>
-            <div class="term" draggable="true">Liver</div>
             <div class="term" draggable="true">Gallbladder</div>
+            <div class="term" draggable="true">Liver</div>
+           <div class="term" draggable="true">Anus</div>
             <div class="term" draggable="true">Pancreas</div>
+            <div class="term" draggable="true">Pharynx</div>
+             <div class="term" draggable="true">Large Intestine</div>
         </div>
     </div>
 
     <div class="nav-buttons">
-        <button onclick="checkAnswers()">Submit →</button>
+        <button onclick="checkAnswers()">Submit</button>
     </div>
 
     <div class="nav-buttons secondary">
@@ -242,7 +249,7 @@
         <div class="popup-content">
             <h2>Congratulations!</h2>
             <p>You matched all organs correctly!</p>
-            <button onclick="closePopup('successPopup')">Continue →</button>
+            <button onclick="closePopup('successPopup')">Continue</button>
         </div>
     </div>
 
