@@ -32,7 +32,7 @@
     .container {
         position: relative;
         z-index:1;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 25px 30px;
         font-size: 20px;
@@ -44,7 +44,7 @@
     }
     h2 {
         text-align: center;
-        font-size: 32px;
+        font-size: 20px;
         margin-bottom: 20px;
     }
     .statement {
@@ -55,6 +55,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        color: yellow;
     }
     select {
         font-size: 18px;
@@ -108,24 +109,13 @@
 </style>
 </head>
 <body>
-<header>Gastrointestinal tract</header>
+<header>"True/False: Digestive System Facts"</header>
 <div class="container">
-<h2>True or False</h2>
+<h2>It is true/ it is false that...</h2>
+<h2>I agree/I disagree that...</h2>
 
 <div class="statement">
-    <span>The pharynx connects the mouth to the stomach</span>
-    <div>
-        <select data-answer="False">
-            <option value="">Select</option>
-            <option>True</option>
-            <option>False</option>
-        </select>
-        <button class="check-btn">Check</button>
-    </div>
-</div>
-
-<div class="statement">
-    <span>The esophagus moves food to the stomach using peristalsis</span>
+    <span>Digestion begins in the mouth, where enzymes in saliva start breaking down carbohydrates</span>
     <div>
         <select data-answer="True">
             <option value="">Select</option>
@@ -137,7 +127,7 @@
 </div>
 
 <div class="statement">
-    <span>The small intestine is responsible for most nutrient absorption</span>
+    <span>The esophagus uses wave-like contractions called peristalsis to move food to the stomach</span>
     <div>
         <select data-answer="True">
             <option value="">Select</option>
@@ -149,7 +139,7 @@
 </div>
 
 <div class="statement">
-    <span>The large intestine produces bile to help digest fats</span>
+    <span>The stomach mixes food with gastric juices that contain acid and enzymes to break down fats</span>
     <div>
         <select data-answer="False">
             <option value="">Select</option>
@@ -161,7 +151,7 @@
 </div>
 
 <div class="statement">
-    <span>The pancreas produces both digestive enzymes and insulin</span>
+    <span>Most nutrient absorption occurs in the small intestine</span>
     <div>
         <select data-answer="True">
             <option value="">Select</option>
@@ -173,7 +163,7 @@
 </div>
 
 <div class="statement">
-    <span>The gallbladder stores and releases bile when needed</span>
+    <span>The large intestine absorbs water and minerals and stores waste in the rectum before elimination</span>
     <div>
         <select data-answer="True">
             <option value="">Select</option>
@@ -185,19 +175,7 @@
 </div>
 
 <div class="statement">
-    <span>The stomach absorbs most of the nutrients from food</span>
-    <div>
-        <select data-answer="False">
-            <option value="">Select</option>
-            <option>True</option>
-            <option>False</option>
-        </select>
-        <button class="check-btn">Check</button>
-    </div>
-</div>
-
-<div class="statement">
-    <span>The liver removes toxins from the blood and stores vitamins</span>
+    <span>The liver produces bile, filters toxins, stores vitamins and minerals, and helps regulate metabolism</span>
     <div>
         <select data-answer="True">
             <option value="">Select</option>
@@ -209,7 +187,7 @@
 </div>
 
 <div class="statement">
-    <span>The anus is the first part of the digestive system</span>
+    <span>The gallbladder produces digestive enzymes that break down proteins, carbohydrates, and fats.</span>
     <div>
         <select data-answer="False">
             <option value="">Select</option>
@@ -221,9 +199,33 @@
 </div>
 
 <div class="statement">
-    <span>The digestive system and endocrine system are not connected</span>
+    <span>The pancreas only produces insulin to regulate blood sugar levels</span>
     <div>
         <select data-answer="False">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>Bile helps digest fats in the small intestine</span>
+    <div>
+        <select data-answer="True">
+            <option value="">Select</option>
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <button class="check-btn">Check</button>
+    </div>
+</div>
+
+<div class="statement">
+    <span>Problems with any digestive organ can affect the health of the entire body.</span>
+    <div>
+        <select data-answer="True">
             <option value="">Select</option>
             <option>True</option>
             <option>False</option>
